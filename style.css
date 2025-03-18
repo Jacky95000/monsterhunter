@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: black;
+}
+header {
+    background-image: url(img/image1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+
+.imgContain img {
+    width: 100%;
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-right: 10%;
+    position: relative;
+}
+.logoMenu  {
+    position: absolute;
+    bottom: 10px;
+   right: 10px;
+   padding:10px;
+   width: 100px;
+   height: auto;
+   }
+   .logoMenu img {
+    width: 120%;
+    height: auto;
+   }
