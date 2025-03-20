@@ -4,39 +4,195 @@
     box-sizing: border-box;
 }
 body {
+    overflow-x: hidden;
+    max-width: 100vw;
     background-color: black;
 }
-header {
-    background-image: url(img/image1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: auto; 
+@font-face{
+    font-family: "goblinHand";
+src: url(font/VTCGoblinHand.ttf);
+}
+h1 {
+    font-family: "goblinHand";
+    color:rgb(170, 139, 13);
+    text-align: center;
+    background-color: black;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    font-size:xx-large;
+}
+h3 {
+    font-family: "goblinHand";
+    color: white;
+}
+.text1 {
+    font-family: "goblinHand";
+    color: white;
+    z-index: 1;
+}
+.text2 {
+    font-family: "goblinHand";
+    color: white;
+    z-index: 1;
+}
+.text3 {
+    font-family: "goblinHand";
+    color: white;
+    z-index: -2;
+}
+.text4 {
+    font-family: "goblinHand";
+    color: white;
+    z-index: 1;
+}
+p {
+    color: white;
+}
+.textContainer h2 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.textContainer {
+    text-align: center;
+    margin-right: 5%;
+    margin-left: 50%;
+    z-index: 1;
+}
+.textContainer2 {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 70%;
+    left: 5%;
+}
+.textContainer3 {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-right: 50%;
+    margin-top: 15%;
+    left: 10%;
+}
+.art1 {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    position: relative; 
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: visible;
 }
-
-.imgContain img {
+.art1 video {
+    position:absolute;
+    object-fit: contain;
     width: 100%;
-    max-width: 60%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+#monstre1 {
+    transform: translate(-30%, 0%);
+    left:300px;
+    width: 80%;
+    display: block;
+    height: auto;
+    bottom: 0px;
+    z-index: -1;
+    position: absolute;
+    
+}
+#monstre2 {
+    transform: translate(-35%, 0%);
+    left:-200px;
+    width: 50vw;
     height: auto;
     display: block;
-    margin: 0 auto;
-    margin-right: 10%;
-    position: relative;
+   position: absolute;
+   z-index: 0;
 }
-.logoMenu  {
-    position: absolute;
-    bottom: 10px;
-   right: 10px;
-   padding:10px;
-   width: 100px;
-   height: auto;
-   }
-   .logoMenu img {
-    width: 120%;
+#monstre3 {
+    transform: translate(40%, -10%);
+    width: 140vh;
     height: auto;
-   }
+    display: block;
+    position: absolute;
+    left:600px;
+    z-index: 10;
+}
+#monstre4 {
+    position: absolute;
+    left: -300px;
+    transform: translate(-50%, -10%);
+    width: 160vh;
+    z-index: -1; 
+    max-width: 100%;
+    height: auto;
+}
+.animation1 {
+    position: absolute;
+    width:10%;
+    left: 100px;
+    top:-30px;
+    
+}
+.animation2 {
+    position: absolute;
+    width:17%;
+   left: 100px;
+   top: -150%;
+}
+.animation3 {
+    position: absolute;
+    width:10%;
+   top: -150%;
+   left: 100px;
+}
+.animContainer1 {
+    position: relative;
+    display: flex;
+    bottom:-245px;
+    left: 640px;
+}
+.animContainer2 {
+    position: relative;
+    display: flex;
+    top:170px;
+}
+.animContainer3 {
+    position: relative;
+    display: flex;
+    top: 120px;
+    left: 1400px;
+}
+button {
+    font-family: "goblinHand";
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* animation monstre au clic */
+#monstre2, #monstre3, #monstre4 {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.8);
+    display: none;  
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; 
+    position: absolute;
+}
+
+#monstre2.visible, #monstre3.visible, #monstre4.visible {
+    opacity: 1 !important;
+    display: block !important; 
+    transform: scale(1); 
+}
+body::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, black);
+    z-index: 100; 
+}
